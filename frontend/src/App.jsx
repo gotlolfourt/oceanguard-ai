@@ -1,16 +1,26 @@
+import { Navigate, Route, Routes } from 'react-router-dom'
+import { AppLayout } from './components/layout/AppLayout'
+import { ErrorBoundary } from './components/ui/ErrorBoundary'
+import { DashboardPage } from './pages/DashboardPage'
+import { LoginPage } from './pages/LoginPage'
+import { NotFoundPage } from './pages/NotFoundPage'
+import { SettingsPage } from './pages/SettingsPage'
+import { ProtectedRoute } from './routes/ProtectedRoute'
+
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      <header className="bg-gray-800 p-4">
-        <h1 className="text-3xl font-bold">OceanGuard AI</h1>
-        <p className="text-gray-400">Marine Debris Monitoring & Response</p>
-      </header>
-      <main className="p-4">
-        <div className="bg-gray-800 rounded-lg p-6">
-          <h2 className="text-2xl font-bold mb-4">Welcome</h2>
-          <p>Application initializing...</p>
-        </div>
-      </main>
-    </div>
+    <ErrorBoundary>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route element={<ProtectedRoute />}>
+          <Route element={<AppLayout />}>
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/settings" element={<SettingsPage />} />
+            <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          </Route>
+        </Route>
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </ErrorBoundary>
   )
 }
