@@ -1,0 +1,112 @@
+# Git
+.git
+.gitignore
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDEs
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+.npm
+dist/
+build/
+
+# Docker
+.dockerignore
+
+# Logs
+logs/
+*.log
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Storage
+storage/
+uploads/
+media/
+
+# Models
+models/
+*.pt
+*.pth
+
+# Temporary
+temp/
+tmp/
+.tmp/
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# IDE
+.vscode/settings.json
+.vscode/launch.json
+.env.local
+.env.*.local
+
+# Build artifacts
+*.pyc
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Frontend
+frontend/dist/
+frontend/.vite/
+
+# Backend
+backend/.alembic/
